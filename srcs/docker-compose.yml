@@ -78,6 +78,8 @@ services:
 
   prometheus:
     build: requirements/bonus/prometheus
+    volumes:
+      - prometheus:/var/lib/prometheus
     networks:
       - network
     restart: unless-stopped
@@ -102,6 +104,13 @@ volumes:
       type: none
       o: bind
       device: /home/maliew/data/files
+
+  prometheus:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/maliew/data/prometheus
 
 networks:
   network:
