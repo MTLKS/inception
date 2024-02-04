@@ -13,7 +13,7 @@ COPY conf/index.html /var/www/html/index.html
 COPY tools/entrypoint.sh /tmp/entrypoint.sh
 RUN chmod +x /tmp/entrypoint.sh
 
-EXPOSE 80
+EXPOSE 8080
 
 ENTRYPOINT ["/tmp/entrypoint.sh"]
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
