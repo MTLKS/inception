@@ -2,7 +2,7 @@ all:
 		docker compose -f ./srcs/docker-compose.yml -p inception up -d
 
 down:
-		docker compose -f ./srcs/docker-compose.yml -p inception down
+		docker compose -f ./srcs/docker-compose.yml -p inception down $(service)
 
 clean:
 		docker compose -f ./srcs/docker-compose.yml -p inception down --rmi all
