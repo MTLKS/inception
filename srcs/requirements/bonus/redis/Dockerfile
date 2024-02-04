@@ -8,4 +8,5 @@ RUN chmod +x /tmp/entrypoint.sh
 
 EXPOSE 6379
 
+ENTRYPOINT ["/tmp/entrypoint.sh"]
 CMD ["redis-server", "--protected-mode", "no"]
